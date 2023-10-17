@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Bem Vindo!</h1>    
+   <form>
+        <div>
+            <input type="text" [(ngModel)]="textoInput" name="textoInput" id="textoInput" placeholder="Digite seu texto aqui">
+        </div>
+        <br>
+        <div [ngClass]="{'invalid-date': isDataInvalida}">
+            <input type="date" [(ngModel)]="dataInput" name="dataInput" id="dataInput">
+        </div>
+        <br>
+        <button (click)="enviarInformacoes()">Enviar</button>
+    </form>
+</div>

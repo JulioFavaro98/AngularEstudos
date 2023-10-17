@@ -1,0 +1,58 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 50px;
+}
+  
+form {
+    text-align: center;
+    padding: 30px;
+    width: 70%;
+    box-shadow: 7px 5px 5px rgba(121, 120, 120, 0.1);
+    border: solid rgba(121, 120, 120, 0.1);
+    border-radius: 16px;
+    margin: 0 auto;
+}
+  
+div {
+    width: 100%;
+}
+  
+input[type="text"],
+input[type="date"] {
+    width: 50%;
+    height: 2rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.invalid-date input[type='date'] {
+    border: 2px solid red;
+}
+  
+button {
+    width: 30%;
+    height: 3rem;
+    color: white;
+    background-color: #e03759;
+    border: 1px solid #e03759;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 20px auto 0 auto;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    background-color: #a81230;
+}
+
+
+
