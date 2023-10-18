@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+}
+div{
+    text-align: center;
+    width: 100rem;
+}
+
+h1{
+    text-align: center;
+    margin: 100px;
+}
+
+.container-centro{
+    margin-left: 10rem;
+}
+
+button {
+    width: 70%;
+    height: 3rem;
+    color: white;
+    background-color: #e03759;
+    border: 1px solid #e03759;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+}
+
+button:hover{
+    background-color: #a81230;
+}

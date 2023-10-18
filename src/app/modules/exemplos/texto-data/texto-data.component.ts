@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from '../dialogs/error-dialog/error-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-texto-data',
@@ -14,7 +15,7 @@ export class TextoDataComponent {
   descErro: string = '';
   
 
-  constructor(public dialog: MatDialog){
+  constructor(public dialog: MatDialog, private rota: Router){
 
   }
 
@@ -35,6 +36,10 @@ export class TextoDataComponent {
       document.body.classList.remove('dialog-open');
       document.body.classList.remove('overlay')
     });
+  }
+
+  voltarHome(){
+    this.rota.navigate(['']);
   }
 
 

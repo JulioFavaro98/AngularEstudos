@@ -1,0 +1,6 @@
+<h1>Bem vindo!</h1>
+<div class="container-centro">
+    <div class="col-centro" *ngFor="let item of exemplos">
+        <button (click)="irParaExemplos(item.id)">{{item.descricao}}</button>
+    </div>
+</div>
