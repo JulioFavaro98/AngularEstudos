@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorDialogComponent } from '../dialogs/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-texto-data',
@@ -9,19 +11,48 @@ export class TextoDataComponent {
   textoInput: string = '';
   dataInput: string = '';
   isDataInvalida: boolean = false;
+  descErro: string = '';
+  
+
+  constructor(public dialog: MatDialog){
+
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ErrorDialogComponent, {
+      width: '600px',
+      data: { descErro: this.descErro },
+      disableClose: true,
+      position: {top: '-20rem', left: '44rem'},
+      panelClass: 'custom-dialog-container'
+    });
+
+    document.body.classList.add('dialog-open');
+    document.body.classList.add('overlay')
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialogo foi fechado');
+      document.body.classList.remove('dialog-open');
+      document.body.classList.remove('overlay')
+    });
+  }
+
 
   enviarInformacoes(){
 
     if (!this.textoInput || !this.dataInput) {
-      alert('Por favor, preencha todos os campos corretamente.');
+      this.descErro = 'Por favor, preencha todos os campos corretamente.';
+      this.openDialog();
       return;
     }
 
     const inputData = new Date(this.dataInput);
     const dataAtual = new Date();
+    
 
     if(inputData < dataAtual){
-      alert("Insira uma data futura")
+      this.descErro = 'Por favor, insira uma data válida.'
+      this.openDialog();
       this.isDataInvalida = true;
       this.dataInput = '';
       return

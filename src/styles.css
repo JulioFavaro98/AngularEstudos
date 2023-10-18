@@ -3,5 +3,13 @@
 *{
     font-family: montserrat;
     font-weight: 300;
-    
+}
+
+.dialog-open {
+    overflow: hidden;
+    pointer-events: none;
+}
+  
+.dialog-open .mat-dialog-container {
+    pointer-events: auto;
 }

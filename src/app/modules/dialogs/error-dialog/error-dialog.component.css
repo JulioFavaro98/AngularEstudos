@@ -1,0 +1,23 @@
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding: 30px;
+}
+
+button {
+    width: 30%;
+    height: 3rem;
+    color: white;
+    background-color: #e03759;
+    border: 1px solid #e03759;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 20px auto 0 auto;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    background-color: #a81230;
+}

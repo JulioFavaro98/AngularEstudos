@@ -17,7 +17,7 @@ form {
     padding: 30px;
     width: 70%;
     box-shadow: 7px 5px 5px rgba(121, 120, 120, 0.1);
-    border: solid rgba(121, 120, 120, 0.1);
+    border: 1px solid rgba(121, 120, 120, 0.1);
     border-radius: 16px;
     margin: 0 auto;
 }
@@ -53,6 +53,7 @@ button {
 button:hover{
     background-color: #a81230;
 }
+
 
 
 
