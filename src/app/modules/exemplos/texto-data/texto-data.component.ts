@@ -30,12 +30,10 @@ export class TextoDataComponent {
     });
 
     document.body.classList.add('dialog-open');
-    document.body.classList.add('overlay')
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Dialogo foi fechado');
       document.body.classList.remove('dialog-open');
-      document.body.classList.remove('overlay')
     });
   }
 

@@ -7,6 +7,7 @@ import { TextoDataComponent } from './modules/exemplos/texto-data/texto-data.com
 import { FormsModule } from '@angular/forms';
 import { ErrorDialogComponent } from './modules/exemplos/dialogs/error-dialog/error-dialog.component';
 import { HomeComponent } from './modules/home/home.component';
+import { PopupCampotextoComponent } from './modules/exemplos/dialogs/popup-campotexto/popup-campotexto.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HomeComponent } from './modules/home/home.component';
     AppComponent,
     TextoDataComponent,
     ErrorDialogComponent,
-    HomeComponent
+    HomeComponent,
+    PopupCampotextoComponent
   ],
   imports: [
     BrowserModule,
