@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from '../dialogs/error-dialog/error-dialog.component';
 import { Router } from '@angular/router';
+import * as moment from 'moment-timezone';
 
 @Component({
   selector: 'app-texto-data',
@@ -51,29 +52,20 @@ export class TextoDataComponent {
       return;
     }
 
-    const inputData = new Date(this.dataInput);
-    const dataAtual = new Date();
-    
+    const inputData = moment(this.dataInput).tz(moment.tz.guess());
+    const dataAtual = moment().tz(moment.tz.guess());
 
-    if(inputData < dataAtual){
+    
+    if(inputData.isBefore(dataAtual, 'day')){
       this.descErro = 'Por favor, insira uma data válida.'
       this.openDialog();
       this.isDataInvalida = true;
       this.dataInput = '';
-      return
-    }
-
-    const formatarData = (date: Date) => {
-      const dia = ('0' + date.getUTCDate()).slice(-2);
-      const mes = ('0' + (date.getUTCMonth() + 1)).slice(-2);
-      const ano = date.getUTCFullYear();
-      return `${dia}/${mes}/${ano}`;
-    };
-
-    const dataFormatada = formatarData(inputData);
+      return;
+    } 
 
     console.log('Texto Inserido: ', this.textoInput);
-    console.log('Data Inserida: ', dataFormatada);
+    console.log('Data Inserida: ', this.dataInput);
 
     this.textoInput = '';
     this.dataInput = '';
