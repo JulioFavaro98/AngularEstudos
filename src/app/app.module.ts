@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ErrorDialogComponent } from './modules/exemplos/dialogs/error-dialog/error-dialog.component';
 import { HomeComponent } from './modules/home/home.component';
 import { PopupCampotextoComponent } from './modules/exemplos/dialogs/popup-campotexto/popup-campotexto.component';
+import { CpfCnpjComponent } from './modules/exemplos/cpf-cnpj/cpf-cnpj.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PopupCampotextoComponent } from './modules/exemplos/dialogs/popup-campo
     TextoDataComponent,
     ErrorDialogComponent,
     HomeComponent,
-    PopupCampotextoComponent
+    PopupCampotextoComponent,
+    CpfCnpjComponent
   ],
   imports: [
     BrowserModule,

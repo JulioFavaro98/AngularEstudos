@@ -13,7 +13,7 @@ export class HomeComponent {
   exemplos: any = [
     {id: 'texto-data', descricao: 'Texto-data'},
     {id: 'pop-up', descricao: 'Pop-up nome'},
-    {id: 'cpf-cnpj', descricao: 'CPF-CNPJ [Em produção]'}
+    {id: 'cpf-cnpj', descricao: 'CPF-CNPJ'}
   ]
 
   constructor(public dialog: MatDialog, private rota: Router){}
@@ -46,6 +46,9 @@ export class HomeComponent {
         break;
       case 'pop-up':
         this.openDialog();
+        break;
+      case 'cpf-cnpj':
+        this.rota.navigate(['/cpf-cnpj'])
         break;
       default:
         this.rota.navigate(['']);

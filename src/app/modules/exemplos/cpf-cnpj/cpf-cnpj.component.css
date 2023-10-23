@@ -1,0 +1,82 @@
+h1{
+    text-align: center;
+}
+.divPai {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    margin: 12rem 0 0 0 ;
+}
+
+.container{
+    box-shadow: 7px 5px 5px rgba(121, 120, 120, 0.1);
+    border: 1px solid rgba(121, 120, 120, 0.1);
+    border-radius: 16px;
+    width: 70%;
+    height: 100%;
+    padding: 50px;
+    margin: 30px 0 0 0;
+}
+
+select{
+    margin: 5px;
+}
+
+.container-form {
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+input{
+    width: 8rem;
+}
+
+button {
+    width: 100%;
+    height: 3rem;
+    color: white;
+    background-color: #e03759;
+    border: 1px solid #e03759;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 20px 0 0 0;
+    transition: background-color 0.3s ease;
+
+}
+
+button:hover{
+    background-color: #a81230;
+}
+
+.listaDeDocs{
+    text-align: center;
+    box-shadow: 7px 5px 5px rgba(121, 120, 120, 0.1);
+    border: 1px solid rgba(121, 120, 120, 0.1);
+    border-radius: 16px;
+    width: 70%;
+    height: auto;
+    padding: 30px;
+    margin: 30px 0 0 0;
+}
+
+table {
+    width: 70%;
+    margin: 30px auto; 
+    border-collapse: collapse; 
+}
+  
+th, td {
+    border: 1px solid rgba(121, 120, 120, 0.1);
+    padding: 10px;
+    text-align: center;
+}
+
+.acao-btn {
+    width: 70px;
+    height: 30px;
+    font-size: 14px; 
+    margin-right: 5px; 
+}
+

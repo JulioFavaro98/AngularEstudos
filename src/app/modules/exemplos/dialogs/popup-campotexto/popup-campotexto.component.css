@@ -13,7 +13,7 @@ div{
 button {
     width: 70%;
     height: 3rem;
-    color: white;
+    color: #FFFF;
     background-color: #e03759;
     border: 1px solid #e03759;
     border-radius: 30px;
@@ -29,5 +29,6 @@ button:hover{
 .pop-up{
     border: 1px solid rgba(121, 120, 120, 0.1);
     border-radius: 16px;
+    box-shadow: 7px 5px 5px rgba(121, 120, 120, 0.1);
     margin: 10px;
 }
