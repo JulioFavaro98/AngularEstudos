@@ -10,48 +10,51 @@
     <div class="container-form">
         <label for="documento">{{tipoDocumento === 'cpf' ? 'CPF' : 'CNPJ' }}: </label>
         <input type="text" id="documento" name="documento" [(ngModel)]="documento" [maxlength]="tipoDocumento === 'cpf' ? 11 : 14" (input)="validarDocumento()">
+        <br>
         <button type="button" (click)="enviar()" [disabled]="documento.length !== (tipoDocumento === 'cpf' ? 11 : 14)">Enviar</button>
         <button type="button" (click)="voltar()">Voltar</button>
     </div>
 </div>
 <div class="listaDeDocs">
     <h2>Lista de Documentos:</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Tipo Documento</th>
-                <th>Número Documento</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let item of listaDocumentos; let i = index">
+    <table id="table-data">
+            <thead>
                 <tr>
-                    <td>{{ item.tipo | uppercase}}</td>
-                    <td>{{ item.numero }}</td>
-                    <td>
-                        <button class="acao-btn editar-btn" (click)="editarDocumento(i)">Editar</button>
-                        <button class="acao-btn excluir-btn" (click)="excluirDocumento(i)">Excluir</button>
-                    </td>
+                    <th (click)="ordenarPorDocs()">Tipo Documento</th>
+                    <th>Número Documento</th>
+                    <th class="acoes-column">Ações</th>
                 </tr>
-                <tr *ngIf="i === documentoEmEdicao">
-                    <td>
-                        <select [(ngModel)]="tipoDocumentoEdit">
-                            <option value="cpf">CPF</option>
-                            <option value="cnpj">CNPJ</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type="text" [(ngModel)]="documentoEdit" [maxlength]="tipoDocumentoEdit === 'cpf' ? 11 : 14">
-                    </td>
-                    <td>
-                        <button (click)="salvarEdicao(i)">Salvar</button>
-                        <button (click)="cancelarEdicao(i)">Cancelar</button>
-                    </td>
-                </tr>
-            </ng-container>
-        </tbody>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of listaDocumentos; let i = index">
+                    <tr>
+                        <td>{{ item.tipo | uppercase}}</td>
+                        <td>{{ item.numero }}</td>
+                        <td>
+                            <button class="acao-btn editar-btn" (click)="editarDocumento(i)">Editar</button>
+                            <button class="acao-btn excluir-btn" (click)="excluirDocumento(i)">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr *ngIf="i === documentoEmEdicao">
+                        <td>
+                            <select [(ngModel)]="tipoDocumentoEdit">
+                                <option value="cpf">CPF</option>
+                                <option value="cnpj">CNPJ</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" [(ngModel)]="documentoEdit" [maxlength]="tipoDocumentoEdit === 'cpf' ? 11 : 14">
+                        </td>
+                        <td>
+                            <button class="acao-btn editar-btn" (click)="salvarEdicao(i)">Salvar</button>
+                            <button class="acao-btn editar-btn" (click)="cancelarEdicao(i)">Cancelar</button>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
     </table>
+    <button type="button" class="btn-export" (click)="exportExcel()">Exportar Excel</button>
+    <button type="button" class="btn-export" (click)="exportPDF()">Exportar PDF</button>
 </div>
 
 
