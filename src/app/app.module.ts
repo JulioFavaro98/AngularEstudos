@@ -9,6 +9,10 @@ import { ErrorDialogComponent } from './modules/exemplos/dialogs/error-dialog/er
 import { HomeComponent } from './modules/home/home.component';
 import { PopupCampotextoComponent } from './modules/exemplos/dialogs/popup-campotexto/popup-campotexto.component';
 import { CpfCnpjComponent } from './modules/exemplos/cpf-cnpj/cpf-cnpj.component';
+import { StringFormaterComponent } from './modules/exemplos/string-formater/string-formater.component';
+import { InformacoesSeparadasComponent } from './modules/exemplos/modelos/informacoes-separadas/informacoes-separadas.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -18,13 +22,16 @@ import { CpfCnpjComponent } from './modules/exemplos/cpf-cnpj/cpf-cnpj.component
     ErrorDialogComponent,
     HomeComponent,
     PopupCampotextoComponent,
-    CpfCnpjComponent
+    CpfCnpjComponent,
+    StringFormaterComponent,
+    InformacoesSeparadasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

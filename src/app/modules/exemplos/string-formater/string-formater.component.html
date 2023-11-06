@@ -1,0 +1,19 @@
+<h1>Digite a String a ser formatada</h1>
+<div>
+    <form>
+        <input type="text" [(ngModel)]="stringParaEnviar" name="stringParaEnviar" placeholder="Digite a string">
+        <button (click)="enviarString()">Enviar</button>
+        <button (click)="voltarHome()">Cancelar</button>
+      </form>
+      <ul *ngIf="informacoes">
+        <li>CNPJ: {{ informacoes.cnpjCorpo }}/{{informacoes.cnpjFilial}} - {{ informacoes.cnpjDigito }}</li>
+        <li>Indicador do Processo: {{ informacoes.indicadorProcesso }}</li>
+        <li>Data de Início de Vigência: {{ informacoes.dataInicioVigencia }}</li>
+        <li>Data de Fim de Vigência: {{ informacoes.dataFimVigencia }}</li>
+        <li>Data de Assinatura do Contrato: {{ informacoes.dataAssinaturaContrato }}</li>
+        <li>Data da Licitação do Contrato: {{ informacoes.dataLicitacaoContrato }}</li>
+        <li>Código do Produto/Serviço: {{ informacoes.codigoProdutoServico }}</li>
+      </ul>
+</div>
+
+

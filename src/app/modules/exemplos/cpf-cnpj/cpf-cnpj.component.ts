@@ -127,7 +127,7 @@ export class CpfCnpjComponent {
         const cells = row.getElementsByTagName('td');
 
         for (let i = 0; i < cells.length; i++) {
-          if (i !== 2) { // Não inclui a terceira coluna (Ações)
+          if (i !== 2) { 
             rowData.push(cells[i].innerText);
           }
         }
